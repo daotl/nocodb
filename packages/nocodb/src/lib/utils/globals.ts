@@ -147,6 +147,7 @@ export enum CacheScope {
   API_TOKEN = 'apiToken',
   INSTANCE_META = 'instanceMeta',
   USER_PROJECT = 'userProject',
+  LOGIN = 'login',
 }
 export enum CacheGetType {
   TYPE_ARRAY = 'TYPE_ARRAY',

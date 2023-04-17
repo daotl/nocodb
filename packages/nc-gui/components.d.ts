@@ -127,6 +127,7 @@ declare module '@vue/runtime-core' {
     MdiHeart: typeof import('~icons/mdi/heart')['default']
     MdiHistory: typeof import('~icons/mdi/history')['default']
     MdiKeyStar: typeof import('~icons/mdi/key-star')['default']
+    MdiLogin: typeof import('~icons/mdi/login')['default']
     MdiMenuDown: typeof import('~icons/mdi/menu-down')['default']
     MdiMicrosoftTeams: typeof import('~icons/mdi/microsoft-teams')['default']
     MdiMoonFull: typeof import('~icons/mdi/moon-full')['default']
