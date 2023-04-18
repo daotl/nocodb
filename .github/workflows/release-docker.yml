@@ -104,6 +104,12 @@ jobs:
 
       - name: Build nocodb and docker files
         run: |
+          cd ../..
+          export NODE_OPTIONS="--max_old_space_size=16384"
+          cd packages/nc-gui
+          npm install
+          npm run build:copy
+          cd ../nocodb
           npm run build
           npm run docker:build
         working-directory: ${{ env.working-directory }}
@@ -132,7 +138,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3.2.0
         with:
-          context: ${{ env.working-directory }}
+          context: ${{ env.working-directory }}/..
+          file: ${{ env.working-directory }}/Dockerfile
           build-args: NC_VERSION=${{ steps.get-docker-repository.outputs.DOCKER_BUILD_TAG }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           cache-from: type=local,src=/tmp/.buildx-cache
