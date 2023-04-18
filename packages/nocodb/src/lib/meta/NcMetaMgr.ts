@@ -295,6 +295,8 @@ export default class NcMetaMgr {
                   process.env.NC_GITHUB_CLIENT_ID &&
                   process.env.NC_GITHUB_CLIENT_SECRET
                 ),
+                oidcProvider: (process.env.NC_OIDC_CLIENT_ID && process.env.NC_OIDC_CLIENT_SECRET) ?
+                  process.env.NC_OIDC_PROVIDER : '',
                 oneClick: !!process.env.NC_ONE_CLICK,
                 connectToExternalDB:
                   !process.env.NC_CONNECT_TO_EXTERNAL_DB_DISABLED,
